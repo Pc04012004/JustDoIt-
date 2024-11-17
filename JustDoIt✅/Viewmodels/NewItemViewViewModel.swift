@@ -1,4 +1,3 @@
-//
 //  NewItemViewViewModel.swift
 //  JustDoIt✅
 //
@@ -11,6 +10,7 @@ class NewItemViewViewModel:ObservableObject{
     @Published var title = ""
     @Published var duedate = Date()
     @Published var showAlert = false
+    
    
     
     init() {}
@@ -26,7 +26,7 @@ class NewItemViewViewModel:ObservableObject{
                                    title: title
                                    , dueDate:duedate.timeIntervalSince1970
                                    , createdDate: Date().timeIntervalSince1970
-                                   , isDone: false)
+                                   , isDone: false, description: "")
         
         let db = Firestore.firestore()
         
@@ -48,4 +48,3 @@ class NewItemViewViewModel:ObservableObject{
         return true
     }
 }
-
