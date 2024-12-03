@@ -1,4 +1,3 @@
-//
 //  ToDoListitemView.swift
 //  JustDoIt✅
 //
@@ -16,9 +15,14 @@ struct ToDoListitemView: View {
                 Text(item.title)
                     .font(.body)
                     
+                Text(item.description)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                    
                 Text("\(Date(timeIntervalSince1970: item.dueDate).formatted(date: .abbreviated, time:.shortened))")
                     .font(.footnote)
                     .foregroundColor(Color(.secondaryLabel))
+                
             }
             .padding(.leading)
             .padding(.top)
@@ -38,5 +42,6 @@ struct ToDoListitemView: View {
 }
 
 #Preview {
-    ToDoListitemView(item: .init(id: "234", title: "get that stuff", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone:true))
+    ToDoListitemView(item: .init(id: "234", title: "get that stuff", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone:true, description: ""))
 }
+
